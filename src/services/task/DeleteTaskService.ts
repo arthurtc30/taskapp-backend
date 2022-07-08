@@ -11,7 +11,7 @@ class DeleteTaskService {
         id: task_id,
       },
     });
-
+    
     return task;
   }
 }

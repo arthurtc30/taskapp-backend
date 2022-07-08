@@ -10,6 +10,7 @@ import { DetailUserController } from "./controllers/user/DetailUserController";
 
 import { CreateTaskController } from "./controllers/task/CreateTaskController";
 import { DeleteTaskController } from "./controllers/task/DeleteTaskController";
+import { EditTaskController } from "./controllers/task/EditTaskController";
 
 const router = Router();
 
@@ -27,5 +28,6 @@ router.delete(
   isAuthenticated,
   new DeleteTaskController().handle
 );
+router.put("/task/edit", isAuthenticated, new EditTaskController().handle);
 
 export { router };
