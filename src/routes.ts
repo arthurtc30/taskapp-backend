@@ -11,6 +11,9 @@ import { DetailUserController } from "./controllers/user/DetailUserController";
 import { CreateTaskController } from "./controllers/task/CreateTaskController";
 import { DeleteTaskController } from "./controllers/task/DeleteTaskController";
 import { EditTaskController } from "./controllers/task/EditTaskController";
+import { ListTaskController } from "./controllers/task/ListTasksController";
+import { ListFinishedTasksController } from "./controllers/task/ListFinishedTasksController";
+import { ListUnfinishedTasksController } from "./controllers/task/ListUnfinishedTasksController";
 
 const router = Router();
 
@@ -29,5 +32,16 @@ router.delete(
   new DeleteTaskController().handle
 );
 router.put("/task/edit", isAuthenticated, new EditTaskController().handle);
+router.get("/tasks", isAuthenticated, new ListTaskController().handle);
+router.get(
+  "/tasks/finished",
+  isAuthenticated,
+  new ListFinishedTasksController().handle
+);
+router.get(
+  "/tasks/unfinished",
+  isAuthenticated,
+  new ListUnfinishedTasksController().handle
+);
 
 export { router };
