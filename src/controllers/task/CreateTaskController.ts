@@ -6,8 +6,6 @@ class CreateTaskController {
     const { title, description } = req.body;
     const user_id = req.user_id;
 
-    // console.log(req);
-
     const createTaskService = new CreateTaskService();
 
     const task = await createTaskService.execute({

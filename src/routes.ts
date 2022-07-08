@@ -9,6 +9,7 @@ import { AuthUserController } from "./controllers/user/AuthUserController";
 import { DetailUserController } from "./controllers/user/DetailUserController";
 
 import { CreateTaskController } from "./controllers/task/CreateTaskController";
+import { DeleteTaskController } from "./controllers/task/DeleteTaskController";
 
 const router = Router();
 
@@ -21,5 +22,10 @@ router.get("/me", isAuthenticated, new DetailUserController().handle);
 
 // Rotas Task
 router.post("/task/add", isAuthenticated, new CreateTaskController().handle);
+router.delete(
+  "/task/delete",
+  isAuthenticated,
+  new DeleteTaskController().handle
+);
 
 export { router };

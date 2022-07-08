@@ -3,10 +3,6 @@ import prismaClient from "../../prisma";
 interface TaskRequest {
   title: string;
   description: string;
-  // data_inicio
-  // data_fim
-  // horas_diarias: number;
-  // data_postada
   user_id: string;
 }
 
