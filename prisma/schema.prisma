@@ -31,8 +31,8 @@ model Task {
 
   created_at     DateTime? @default(now())
   updated_at     DateTime? @default(now())
-  starting_date  DateTime?
-  finishing_date DateTime?
+  // starting_date  DateTime?
+  // finishing_date DateTime?
 
   user_id String
   user    User   @relation(fields: [user_id], references: [id])

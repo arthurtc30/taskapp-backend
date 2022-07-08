@@ -8,6 +8,8 @@ import { CreateUserController } from "./controllers/user/CreateUserController";
 import { AuthUserController } from "./controllers/user/AuthUserController";
 import { DetailUserController } from "./controllers/user/DetailUserController";
 
+import { CreateTaskController } from "./controllers/task/CreateTaskController";
+
 const router = Router();
 
 const upload = multer(uploadConfig.upload("./tmp"));
@@ -16,5 +18,8 @@ const upload = multer(uploadConfig.upload("./tmp"));
 router.post("/users", new CreateUserController().handle);
 router.post("/session", new AuthUserController().handle);
 router.get("/me", isAuthenticated, new DetailUserController().handle);
+
+// Rotas Task
+router.post("/task/add", isAuthenticated, new CreateTaskController().handle);
 
 export { router };
