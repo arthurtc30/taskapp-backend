@@ -14,6 +14,7 @@ import { EditTaskController } from "./controllers/task/EditTaskController";
 import { ListTaskController } from "./controllers/task/ListTasksController";
 import { ListFinishedTasksController } from "./controllers/task/ListFinishedTasksController";
 import { ListUnfinishedTasksController } from "./controllers/task/ListUnfinishedTasksController";
+import { FinishTaskController } from "./controllers/task/FinishTaskController";
 
 const router = Router();
 
@@ -43,5 +44,6 @@ router.get(
   isAuthenticated,
   new ListUnfinishedTasksController().handle
 );
+router.put("/task/finish", isAuthenticated, new FinishTaskController().handle);
 
 export { router };
