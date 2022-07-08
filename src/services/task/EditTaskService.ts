@@ -9,8 +9,6 @@ interface TaskRequest {
 
 class EditTaskService {
   async execute({ id, title, description, finished }: TaskRequest) {
-    console.log(new Date())
-
     const task = await prismaClient.task.update({
       data: {
         title: title,
