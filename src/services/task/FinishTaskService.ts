@@ -13,6 +13,12 @@ class FinishTaskService {
       data: {
         finished_date: new Date().toISOString(),
       },
+      select: {
+        id: true,
+        title: true,
+        description: true,
+        finished_date: true,
+      },
     });
 
     return task;

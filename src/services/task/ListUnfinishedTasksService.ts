@@ -14,6 +14,12 @@ class ListUnfinishedTasksService {
       orderBy: {
         created_at: "desc",
       },
+      select: {
+        id: true,
+        title: true,
+        description: true,
+        created_at: true,
+      },
     });
 
     return tasks;

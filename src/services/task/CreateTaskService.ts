@@ -12,7 +12,13 @@ class CreateTaskService {
       data: {
         title: title,
         description: description,
-        user_id: user_id
+        user_id: user_id,
+      },
+      select: {
+        id: true,
+        title: true,
+        description: true,
+        created_at: true,
       },
     });
 

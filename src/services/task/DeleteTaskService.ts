@@ -10,8 +10,13 @@ class DeleteTaskService {
       where: {
         id: task_id,
       },
+      select: {
+        id: true,
+        title: true,
+        description: true,
+      },
     });
-    
+
     return task;
   }
 }

@@ -16,6 +16,13 @@ class ListFinishedTasksService {
       orderBy: {
         created_at: "desc",
       },
+      select: {
+        id: true,
+        title: true,
+        description: true,
+        created_at: true,
+        finished_date: true,
+      },
     });
 
     return tasks;

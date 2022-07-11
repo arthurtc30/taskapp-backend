@@ -13,6 +13,13 @@ class ListTaskService {
       orderBy: {
         created_at: "desc",
       },
+      select: {
+        id: true,
+        title: true,
+        description: true,
+        created_at: true,
+        updated_at: true,
+      },
     });
 
     return tasks;

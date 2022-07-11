@@ -16,6 +16,9 @@ class OpenTaskService {
       select: {
         id: true,
         title: true,
+        description: true,
+        created_at: true,
+        updated_at: true,
         finished_date: true,
       },
     });

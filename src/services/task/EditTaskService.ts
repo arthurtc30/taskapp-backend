@@ -18,6 +18,14 @@ class EditTaskService {
       where: {
         id: id,
       },
+      select: {
+        id: true,
+        title: true,
+        description: true,
+        created_at: true,
+        updated_at: finished == null ? true : false,
+        finished_date: finished == null ? false : true,
+      },
     });
 
     return task;
