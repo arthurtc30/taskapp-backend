@@ -14,7 +14,12 @@ class CreateTaskController {
       user_id,
     });
 
-    return res.json(task);
+    const retorno = {
+      ...task,
+      message: `Tarefa ${task.title} criada com sucesso!`,
+    };
+
+    return res.json(retorno);
   }
 }
 

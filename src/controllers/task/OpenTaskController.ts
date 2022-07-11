@@ -11,6 +11,11 @@ class OpenTaskController {
       id,
     });
 
+    const retorno = {
+      ...task,
+      message: `Tarefa "${task.title}" reaberta com sucesso!`,
+    };
+
     return res.json(task);
   }
 }

@@ -11,7 +11,12 @@ class FinishTaskController {
       id,
     });
 
-    return res.json(task);
+    const retorno = {
+      ...task,
+      message: `Tarefa "${task.title}" finalizada com sucesso!`,
+    };
+
+    return res.json(retorno);
   }
 }
 
