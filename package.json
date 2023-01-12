@@ -6,6 +6,7 @@
   "author": "Arthur Teixeira <52799942+arthurtc30@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
+    "setup": "yarn prisma migrate dev",
     "dev": "ts-node-dev src/server.ts"
   },
   "devDependencies": {
